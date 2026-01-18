@@ -1,0 +1,16 @@
+**/.git
+**/.gitignore
+**/.vs
+**/.vscode
+**/.idea
+**/bin
+**/obj
+**/publish
+**/node_modules
+**/*.user
+**/*.userosscache
+**/*.suo
+**/*.cache
+**/Thumbs.db
+**/.DS_Store
+**/appsettings.Development.json
