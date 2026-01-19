@@ -1,3 +1,6 @@
+using TicTacToeGame.Hubs;
+using TicTacToeGame.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure port for cloud hosting (Azure, Railway, Render, etc.)
@@ -6,6 +9,12 @@ builder.WebHost.UseUrls($"http://*:{port}");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add SignalR for real-time multiplayer
+builder.Services.AddSignalR();
+
+// Add RoomManager as singleton
+builder.Services.AddSingleton<RoomManager>();
 
 // Add session support for game state
 builder.Services.AddDistributedMemoryCache();
@@ -42,5 +51,8 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Game}/{action=Index}/{id?}");
+
+// Map SignalR hub
+app.MapHub<GameHub>("/gameHub");
 
 app.Run();

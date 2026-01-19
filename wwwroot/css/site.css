@@ -294,7 +294,292 @@ body {
   }
 }
 
-/* Responsive Design */
+/* ==================== */
+/* LOBBY STYLES */
+/* ==================== */
+
+.lobby-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.lobby-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px 0;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lobby-section {
+  margin: 20px 0;
+}
+
+.lobby-section h3 {
+  color: #a8dadc;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  color: #a8dadc;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.input-group input,
+#room-code-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-group input:focus,
+#room-code-input:focus {
+  outline: none;
+  border-color: #e94560;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.input-group input::placeholder,
+#room-code-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.join-room-group {
+  display: flex;
+  gap: 10px;
+}
+
+.join-room-group input {
+  flex: 1;
+  text-transform: uppercase;
+}
+
+.divider {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 15px 0;
+  font-size: 0.9rem;
+}
+
+.divider-large {
+  margin: 25px 0;
+  font-size: 1rem;
+  position: relative;
+}
+
+.divider-large::before,
+.divider-large::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.divider-large::before {
+  right: 0;
+}
+
+.divider-large::after {
+  left: 0;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #e94560, #ff6b6b);
+  color: white;
+  box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4);
+  width: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(233, 69, 96, 0.5);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #4ecdc4, #44a08d);
+  color: white;
+  box-shadow: 0 5px 20px rgba(78, 205, 196, 0.4);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.5);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #a8dadc;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-small {
+  padding: 8px 15px;
+  font-size: 0.85rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-small:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.btn-small-text {
+  font-size: 0.9rem;
+  padding: 10px 20px;
+}
+
+.lobby-rules {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* ==================== */
+/* ROOM CODE DISPLAY */
+/* ==================== */
+
+.room-code-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: rgba(78, 205, 196, 0.2);
+  padding: 15px 25px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border: 2px solid rgba(78, 205, 196, 0.4);
+}
+
+.room-code-display span {
+  color: #a8dadc;
+  font-size: 1rem;
+}
+
+.room-code {
+  font-size: 1.8rem !important;
+  font-weight: bold;
+  color: #4ecdc4 !important;
+  letter-spacing: 3px;
+  font-family: 'Courier New', monospace;
+}
+
+/* ==================== */
+/* GAME BUTTONS */
+/* ==================== */
+
+.game-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* ==================== */
+/* TURN INDICATORS */
+/* ==================== */
+
+.your-turn {
+  color: #4ecdc4 !important;
+  animation: pulse-turn 1s infinite;
+}
+
+.opponent-turn {
+  color: #999 !important;
+}
+
+@keyframes pulse-turn {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ==================== */
+/* ERROR TOAST */
+/* ==================== */
+
+.error-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #e94560, #ff6b6b);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1rem;
+  z-index: 1000;
+  animation: slide-up 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.error-toast.fade-out {
+  animation: fade-out 0.5s ease forwards;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateX(-50%) translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+}
+
+/* ==================== */
+/* RESPONSIVE DESIGN */
+/* ==================== */
+
 @media (max-width: 600px) {
   .game-title {
     font-size: 1.8rem;
@@ -305,12 +590,13 @@ body {
   }
   
   .game-info {
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
   }
   
   .info-card {
-    padding: 10px 20px;
+    padding: 10px 15px;
+    flex: 1 1 40%;
   }
   
   .message {
@@ -325,5 +611,22 @@ body {
   
   .rules {
     padding: 15px;
+  }
+  
+  .lobby-card {
+    padding: 20px;
+  }
+  
+  .room-code-display {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .room-code {
+    font-size: 1.5rem !important;
+  }
+  
+  .join-room-group {
+    flex-direction: column;
   }
 }
